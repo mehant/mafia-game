@@ -1,4 +1,11 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Mafia Game — Mafia Game Party',
+  description: 'Learn what Mafia is and how to play the online social deduction party game at Mafia Game Party — rules, roles, and how it works.',
+  robots: 'index, follow',
+};
 
 export default function About() {
   return (
