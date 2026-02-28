@@ -133,8 +133,11 @@ export default function Home() {
         <div className="text-center text-xs text-gray-600 space-y-1">
           <p>4+ players needed. No account required.</p>
           <p>Create a game, share the link, and play!</p>
-          <Link href="/about" className="inline-block mt-2 text-gray-500 hover:text-gray-300 transition-colors">
+          <p><Link href="/about" className="inline-block mt-2 text-gray-500 hover:text-gray-300 transition-colors">
             About the game
+          </Link> </p>
+          <Link href="/profile" className="inline-block mt-2 text-gray-500 hover:text-gray-300 transition-colors">
+            About me
           </Link>
         </div>
       </div>
