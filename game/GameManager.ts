@@ -39,6 +39,17 @@ export class GameManager {
       this.handleSkipVote(socket);
     });
 
+    socket.on(Events.REQUEST_STATE, () => {
+      const gameId = this.playerToGame.get(socket.id);
+      if (gameId) {
+        const game = this.games.get(gameId);
+        if (game) {
+          const clientState = game.getClientState(socket.id);
+          socket.emit(Events.GAME_STATE_UPDATE, clientState);
+        }
+      }
+    });
+
     socket.on('disconnect', () => {
       this.handleDisconnect(socket);
     });

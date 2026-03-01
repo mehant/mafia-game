@@ -21,6 +21,7 @@ export default function GamePage() {
     castVote,
     skipVote,
     joinGame,
+    requestState,
     detectiveResult,
     mafiaVotes,
     setDetectiveResult,
@@ -28,9 +29,19 @@ export default function GamePage() {
 
   const [joining, setJoining] = useState(false);
   const [name, setName] = useState('');
+  const [stateRequested, setStateRequested] = useState(false);
+
+  // On mount, ask the server if we're already in a game
+  useEffect(() => {
+    if (connected && !gameState && !stateRequested) {
+      requestState();
+      setStateRequested(true);
+    }
+  }, [connected, gameState, stateRequested, requestState]);
 
   // If we navigated here directly (not from lobby), show join form
-  const needsJoin = connected && !gameState && !joining;
+  // Wait for the state request to complete before showing the join form
+  const needsJoin = connected && !gameState && !joining && stateRequested;
 
   // Clear detective result when phase changes
   useEffect(() => {

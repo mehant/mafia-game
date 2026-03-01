@@ -87,6 +87,10 @@ export function useSocket() {
     socketRef.current.emit('skip_vote');
   }, []);
 
+  const requestState = useCallback(() => {
+    socketRef.current.emit('request_state');
+  }, []);
+
   return {
     socket: socketRef.current,
     connected,
@@ -100,6 +104,7 @@ export function useSocket() {
     nightAction,
     castVote,
     skipVote,
+    requestState,
     setDetectiveResult,
   };
 }

@@ -8,6 +8,7 @@ export const Events = {
   NIGHT_ACTION: 'night_action',
   CAST_VOTE: 'cast_vote',
   SKIP_VOTE: 'skip_vote',
+  REQUEST_STATE: 'request_state',
 
   // Server → Client
   GAME_STATE_UPDATE: 'game_state_update',

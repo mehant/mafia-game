@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useSocket } from '../hooks/useSocket';
@@ -13,9 +13,11 @@ export default function Home() {
   const router = useRouter();
 
   // Navigate when we get a game state
-  if (gameState) {
-    router.push(`/game/${gameState.id}`);
-  }
+  useEffect(() => {
+    if (gameState) {
+      router.push(`/game/${gameState.id}`);
+    }
+  }, [gameState, router]);
 
   const handleCreate = () => {
     if (name.trim()) {
