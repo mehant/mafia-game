@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: 'About me — Mehant Baid',
@@ -21,7 +22,11 @@ export default function Profile() {
                         Happy deducing!!
                     </p>
                 </div>
-
+                <div className="text-center mt-4">
+                    <Link href="/" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+                        &larr; Play game
+                    </Link>
+                </div>
             </div>
         </div>
 

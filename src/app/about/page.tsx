@@ -68,7 +68,7 @@ export default function About() {
             href="/"
             className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
           >
-            &larr; Back to home
+            &larr; Play game
           </Link>
         </div>
       </div>
