@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mafia Game",
+  title: "Mafia Game Party",
   description: "Play Mafia online with friends",
 };
 
